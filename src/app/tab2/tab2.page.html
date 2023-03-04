@@ -1,27 +1,33 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar class="ion-text-center">
+    Placar Truco
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
+  <!--valores rodadas-->
   <ion-grid>
     <ion-row>
-
+      <ion-col class="ion-text-center">
+        Valendo : {{valendo}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
       <ion-col>
-        <ion-button>1</ion-button>
+        <ion-button (click)="valorum()" expand="full">1</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button>3</ion-button>
+        <ion-button  (click)="truco()" expand="full">3</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button>6</ion-button>
+        <ion-button (click)="seis()" expand="full">6</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button>9</ion-button>
+        <ion-button (click)="nove()" expand="full">9</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button>12</ion-button>
+        <ion-button (click)="doze()" expand="full">12</ion-button>
       </ion-col>
 
     </ion-row>
@@ -29,40 +35,40 @@
 
   <ion-grid>
     <ion-row>
-        <ion-col class="ion-text-center" size="6">
-          Time 1
-        </ion-col>
-  
-        <ion-col class="ion-text-center" size="6">
-          Time 2
-        </ion-col>
+      <ion-col class="ion-text-center" size="6">
+        Time 1
+      </ion-col>
+
+      <ion-col class="ion-text-center" size="6">
+        Time 2
+      </ion-col>
 
     </ion-row>
   </ion-grid>
-
+  <!--placar rodada-->
   <ion-grid>
     <ion-row>
 
       <ion-col class="ion-text-center" size="6">
+        <ion-button (click)="adicaoPlacarTime1()">+</ion-button>
+      </ion-col>
+
+      <ion-col (click)="adicaoPlacarTime2()" class="ion-text-center" size="6">
         <ion-button>+</ion-button>
       </ion-col>
 
-      <ion-col class="ion-text-center" size="6">
-        <ion-button>+</ion-button>
-      </ion-col>
-
     </ion-row>
   </ion-grid>
 
   <ion-grid>
     <ion-row>
-        <ion-col class="ion-text-center" size="6">
-          0
-        </ion-col>
-  
-        <ion-col class="ion-text-center" size="6">
-          0
-        </ion-col>
+      <ion-col class="ion-text-center" size="6">
+        {{pontuacaoTime1}}
+      </ion-col>
+
+      <ion-col class="ion-text-center" size="6">
+        {{pontuacaoTime2}}
+      </ion-col>
 
     </ion-row>
   </ion-grid>
@@ -71,50 +77,52 @@
     <ion-row>
 
       <ion-col class="ion-text-center" size="6">
-        <ion-button>-</ion-button>
+        <ion-button (click)="diminuirPlacarTime1()">-</ion-button>
       </ion-col>
 
       <ion-col class="ion-text-center" size="6">
-        <ion-button>-</ion-button>
+        <ion-button (click)="diminuirPlacarTime2()">-</ion-button>
       </ion-col>
 
     </ion-row>
   </ion-grid>
 
+  <!--placar partidas-->
+  <h2>
+    <p class="ion-text-center">PARTIDAS</p>
+  </h2>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-start" size="6">
+        TIME 1
+      </ion-col>
+
+      <ion-col class="ion-text-center" size="6">
+        {{vitoriasTime1}}
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-start" size="6">
+        TIME 2
+      </ion-col>
+
+      <ion-col class="ion-text-center" size="6">
+        0
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
   <ion-grid>
     <ion-row>
 
       <ion-col size="12">
-        <ion-button expand="full">Zerar</ion-button>
+        <ion-button (click)="limparTudo()" expand="full">Zerar</ion-button>
       </ion-col>
-
-    </ion-row>
-  </ion-grid>
-
-  <div><p class="ion-text-center">PARTIDAS</p></div>
-
-  <ion-grid>
-    <ion-row>
-        <ion-col class="ion-text-start" size="6">
-          Time 1
-        </ion-col>
-  
-        <ion-col class="ion-text-center" size="6">
-          0
-        </ion-col>
-
-    </ion-row>
-  </ion-grid>
-
-  <ion-grid>
-    <ion-row>
-        <ion-col class="ion-text-start" size="6">
-          Time 2
-        </ion-col>
-  
-        <ion-col class="ion-text-center" size="6">
-          0
-        </ion-col>
 
     </ion-row>
   </ion-grid>
