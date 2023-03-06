@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  styleUrls: ['tab2.page.scss'],
 })
 export class Tab2Page {
   valendo = 1;
@@ -12,65 +12,59 @@ export class Tab2Page {
   vitoriasTime1 = 0;
   vitoriasTime2 = 0;
 
-
-  constructor() { }
+  constructor() {}
 
   valorum() {
-    this.valendo = 1
+    this.valendo = 1;
   }
   truco() {
-    this.valendo = 3
+    this.valendo = 3;
   }
   seis() {
-    this.valendo = 6
+    this.valendo = 6;
   }
   nove() {
-    this.valendo = 9
+    this.valendo = 9;
   }
   doze() {
-    this.valendo = 12
+    this.valendo = 12;
   }
 
   adicaoPlacarTime1() {
-    if (this.pontuacaoTime1 <= 11) {
-      this.pontuacaoTime1 = this.pontuacaoTime1 + this.valendo
-      this.valendo = 1
-    } else if (this.pontuacaoTime1 >= 11) {
-      alert("Partida encerrada! Vitória do time 1");
-      this.vitoriasTime1 = this.vitoriasTime1 + 1
-      this.pontuacaoTime1 = 0
-      this.pontuacaoTime2 = 0
+    this.pontuacaoTime1 = this.pontuacaoTime1 + this.valendo;
+    this.valendo = 1;
+    if (this.pontuacaoTime1 >= 12) {
+      this.pontuacaoTime1 = 0;
+      this.pontuacaoTime2 = 0;
+      alert('Partida encerrada! Vitória do Time 1!');
+      this.vitoriasTime1 = this.vitoriasTime1 + 1;
     }
   }
 
   adicaoPlacarTime2() {
-    if (this.pontuacaoTime2 <= 11) {
-      this.pontuacaoTime2 = this.pontuacaoTime2 + this.valendo
-      this.valendo = 1
-    } else {
-      alert("Partida encerrada! Vitória do time 2");
-      this.vitoriasTime2 = this.vitoriasTime2 + 1
-      this.pontuacaoTime1 = 0
-      this.pontuacaoTime2 = 0
+    this.pontuacaoTime2 = this.pontuacaoTime2 + this.valendo;
+    this.valendo = 1;
+    if (this.pontuacaoTime2 >= 12) {
+      this.pontuacaoTime1 = 0;
+      this.pontuacaoTime2 = 0;
+      alert('Partida encerrada! Vitória do Time 2!');
+      this.vitoriasTime2 = this.vitoriasTime2 + 1;
     }
-
   }
 
   diminuirPlacarTime1() {
-    if (this.pontuacaoTime1 <= 0 ){
-      this.pontuacaoTime1 = 0
-    } else {
-      this.pontuacaoTime1 = this.pontuacaoTime1 - this.valendo
-      this.valendo = 1
+    this.pontuacaoTime1 = this.pontuacaoTime1 - this.valendo;
+    this.valendo = 1;
+    if (this.pontuacaoTime1 <= 0) {
+      this.pontuacaoTime1 = 0;
     }
   }
 
   diminuirPlacarTime2() {
-    if (this.pontuacaoTime2 <= 0 ){
-      this.pontuacaoTime2 = 0
-    } else {
-      this.pontuacaoTime2 = this.pontuacaoTime2 - this.valendo
-      this.valendo = 1
+    this.pontuacaoTime2 = this.pontuacaoTime2 - this.valendo;
+    this.valendo = 1;
+    if (this.pontuacaoTime2 <= 0) {
+      this.pontuacaoTime2 = 0;
     }
   }
 
@@ -80,7 +74,5 @@ export class Tab2Page {
     this.pontuacaoTime2 = 0;
     this.vitoriasTime1 = 0;
     this.vitoriasTime2 = 0;
-
   }
-
 }

@@ -1,33 +1,35 @@
 <ion-header [translucent]="true">
-  <ion-toolbar class="ion-text-center">
-    Placar Truco
+  <ion-toolbar color="tertiary" class="ion-text-center titulo">
+    <ion-title>
+      Placar Truco
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content color="dark" [fullscreen]="true">
 
   <!--valores rodadas-->
   <ion-grid>
     <ion-row>
       <ion-col class="ion-text-center">
-        Valendo : {{valendo}}
+        Valendo:  &nbsp; <span class="azul"> {{valendo}}</span>
       </ion-col>
     </ion-row>
-    <ion-row>
+    <ion-row >
       <ion-col>
-        <ion-button (click)="valorum()" expand="full">1</ion-button>
+        <ion-button color="tertiary" (click)="valorum()" expand="block">1</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button  (click)="truco()" expand="full">3</ion-button>
+        <ion-button color="tertiary" (click)="truco()" expand="block">3</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="seis()" expand="full">6</ion-button>
+        <ion-button color="tertiary" (click)="seis()" expand="block">6</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="nove()" expand="full">9</ion-button>
+        <ion-button color="tertiary" (click)="nove()" expand="block">9</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="doze()" expand="full">12</ion-button>
+        <ion-button color="tertiary" (click)="doze()" expand="block">12</ion-button>
       </ion-col>
 
     </ion-row>
@@ -50,11 +52,11 @@
     <ion-row>
 
       <ion-col class="ion-text-center" size="6">
-        <ion-button (click)="adicaoPlacarTime1()">+</ion-button>
+        <ion-button color="tertiary" (click)="adicaoPlacarTime1()">+</ion-button>
       </ion-col>
 
       <ion-col (click)="adicaoPlacarTime2()" class="ion-text-center" size="6">
-        <ion-button>+</ion-button>
+        <ion-button color="tertiary">+</ion-button>
       </ion-col>
 
     </ion-row>
@@ -77,11 +79,11 @@
     <ion-row>
 
       <ion-col class="ion-text-center" size="6">
-        <ion-button (click)="diminuirPlacarTime1()">-</ion-button>
+        <ion-button color="tertiary" (click)="diminuirPlacarTime1()">-</ion-button>
       </ion-col>
 
       <ion-col class="ion-text-center" size="6">
-        <ion-button (click)="diminuirPlacarTime2()">-</ion-button>
+        <ion-button color="tertiary" (click)="diminuirPlacarTime2()">-</ion-button>
       </ion-col>
 
     </ion-row>
@@ -112,7 +114,7 @@
       </ion-col>
 
       <ion-col class="ion-text-center" size="6">
-        0
+        {{vitoriasTime2}}
       </ion-col>
 
     </ion-row>
@@ -121,7 +123,7 @@
     <ion-row>
 
       <ion-col size="12">
-        <ion-button (click)="limparTudo()" expand="full">Zerar</ion-button>
+        <ion-button color="tertiary" (click)="limparTudo()" expand="block">Zerar</ion-button>
       </ion-col>
 
     </ion-row>
