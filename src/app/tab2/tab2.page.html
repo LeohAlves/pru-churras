@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="tertiary" class="ion-text-center titulo">
+  <ion-toolbar color="dark" class="ion-text-center titulo">
     <ion-title>
       Placar Truco
     </ion-title>
@@ -7,126 +7,128 @@
 </ion-header>
 
 <ion-content color="dark" [fullscreen]="true">
+  <div class="background"></div>
+  <div class="container">
+    <!--valores rodadas-->
+    <ion-grid>
+      <ion-row>
+        <ion-col class="ion-text-center">
+          Valendo: &nbsp; <span class="azul"> {{valendo}}</span>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button color="tertiary" (click)="valorum()" expand="block">1</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="tertiary" (click)="truco()" expand="block">3</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="tertiary" (click)="seis()" expand="block">6</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="tertiary" (click)="nove()" expand="block">9</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="tertiary" (click)="doze()" expand="block">12</ion-button>
+        </ion-col>
 
-  <!--valores rodadas-->
-  <ion-grid>
-    <ion-row>
-      <ion-col class="ion-text-center">
-        Valendo:  &nbsp; <span class="azul"> {{valendo}}</span>
-      </ion-col>
-    </ion-row>
-    <ion-row >
-      <ion-col>
-        <ion-button color="tertiary" (click)="valorum()" expand="block">1</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button color="tertiary" (click)="truco()" expand="block">3</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button color="tertiary" (click)="seis()" expand="block">6</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button color="tertiary" (click)="nove()" expand="block">9</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button color="tertiary" (click)="doze()" expand="block">12</ion-button>
-      </ion-col>
+      </ion-row>
+    </ion-grid>
 
-    </ion-row>
-  </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="ion-text-center" size="6">
+          Time 1
+        </ion-col>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col class="ion-text-center" size="6">
-        Time 1
-      </ion-col>
+        <ion-col class="ion-text-center" size="6">
+          Time 2
+        </ion-col>
 
-      <ion-col class="ion-text-center" size="6">
-        Time 2
-      </ion-col>
+      </ion-row>
+    </ion-grid>
+    <!--placar rodada-->
+    <ion-grid>
+      <ion-row>
 
-    </ion-row>
-  </ion-grid>
-  <!--placar rodada-->
-  <ion-grid>
-    <ion-row>
+        <ion-col class="ion-text-center" size="6">
+          <ion-button color="tertiary" (click)="adicaoPlacarTime1()">+</ion-button>
+        </ion-col>
 
-      <ion-col class="ion-text-center" size="6">
-        <ion-button color="tertiary" (click)="adicaoPlacarTime1()">+</ion-button>
-      </ion-col>
+        <ion-col (click)="adicaoPlacarTime2()" class="ion-text-center" size="6">
+          <ion-button color="tertiary">+</ion-button>
+        </ion-col>
 
-      <ion-col (click)="adicaoPlacarTime2()" class="ion-text-center" size="6">
-        <ion-button color="tertiary">+</ion-button>
-      </ion-col>
+      </ion-row>
+    </ion-grid>
 
-    </ion-row>
-  </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="ion-text-center" size="6">
+          {{pontuacaoTime1}}
+        </ion-col>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col class="ion-text-center" size="6">
-        {{pontuacaoTime1}}
-      </ion-col>
+        <ion-col class="ion-text-center" size="6">
+          {{pontuacaoTime2}}
+        </ion-col>
 
-      <ion-col class="ion-text-center" size="6">
-        {{pontuacaoTime2}}
-      </ion-col>
+      </ion-row>
+    </ion-grid>
 
-    </ion-row>
-  </ion-grid>
+    <ion-grid>
+      <ion-row>
 
-  <ion-grid>
-    <ion-row>
+        <ion-col class="ion-text-center" size="6">
+          <ion-button color="tertiary" (click)="diminuirPlacarTime1()">-</ion-button>
+        </ion-col>
 
-      <ion-col class="ion-text-center" size="6">
-        <ion-button color="tertiary" (click)="diminuirPlacarTime1()">-</ion-button>
-      </ion-col>
+        <ion-col class="ion-text-center" size="6">
+          <ion-button color="tertiary" (click)="diminuirPlacarTime2()">-</ion-button>
+        </ion-col>
 
-      <ion-col class="ion-text-center" size="6">
-        <ion-button color="tertiary" (click)="diminuirPlacarTime2()">-</ion-button>
-      </ion-col>
+      </ion-row>
+    </ion-grid>
 
-    </ion-row>
-  </ion-grid>
+    <!--placar partidas-->
+    <h2>
+      <p class="ion-text-center">PARTIDAS</p>
+    </h2>
 
-  <!--placar partidas-->
-  <h2>
-    <p class="ion-text-center">PARTIDAS</p>
-  </h2>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="ion-text-start" size="6">
+          TIME 1
+        </ion-col>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col class="ion-text-start" size="6">
-        TIME 1
-      </ion-col>
+        <ion-col class="ion-text-center" size="6">
+          {{vitoriasTime1}}
+        </ion-col>
 
-      <ion-col class="ion-text-center" size="6">
-        {{vitoriasTime1}}
-      </ion-col>
+      </ion-row>
+    </ion-grid>
 
-    </ion-row>
-  </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="ion-text-start" size="6">
+          TIME 2
+        </ion-col>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col class="ion-text-start" size="6">
-        TIME 2
-      </ion-col>
+        <ion-col class="ion-text-center" size="6">
+          {{vitoriasTime2}}
+        </ion-col>
 
-      <ion-col class="ion-text-center" size="6">
-        {{vitoriasTime2}}
-      </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row>
 
-    </ion-row>
-  </ion-grid>
-  <ion-grid>
-    <ion-row>
+        <ion-col size="12">
+          <ion-button color="tertiary" (click)="limparTudo()" expand="block">Zerar</ion-button>
+        </ion-col>
 
-      <ion-col size="12">
-        <ion-button color="tertiary" (click)="limparTudo()" expand="block">Zerar</ion-button>
-      </ion-col>
+      </ion-row>
+    </ion-grid>
 
-    </ion-row>
-  </ion-grid>
-
+  </div>
 </ion-content>

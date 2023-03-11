@@ -13,3 +13,22 @@
 {
   border-radius: 50%;
 }
+
+.background {
+  height: 100%;
+  width: 100%;
+  background: url("../../assets/fundo.jpg");
+  background-size: cover;
+  filter: grayscale(100%);
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.container {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
