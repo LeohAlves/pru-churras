@@ -7,8 +7,10 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
   valendo = 1;
+
   pontuacaoTime1 = 0;
   pontuacaoTime2 = 0;
+  
   vitoriasTime1 = 0;
   vitoriasTime2 = 0;
 
