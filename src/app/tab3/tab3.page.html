@@ -1,12 +1,12 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
+  <ion-toolbar color="dark" >
+    <ion-title class="ion-text-center titulo">
+      Dado
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" color="light">
 
   <ion-item>
     <ion-label>Tamanho:</ion-label>
@@ -15,7 +15,7 @@
   <br>
 
   <ion-card>
-    <ion-card-header class="ion-text-center">
+    <ion-card-header class="ion-text-center titulo">
       Valor:
     </ion-card-header>
 
@@ -25,7 +25,7 @@
   </ion-card-content>
 </ion-card>
 
-<ion-button expand="block" (click)="jogarDado()">
+<ion-button class="padding" color="danger" expand="block" (click)="jogarDado()">
   Jogar o dado!
 </ion-button>
 
